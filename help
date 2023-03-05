@@ -1,0 +1,16 @@
+	s(send)   	- inviare un messaggio
+	b(backup) 	- mostrare il backup dei messaggi ricevuti
+	n(new)    	- verificare la presenza di nuovi messaggi
+	d(delete) 	- eliminare dei messaggi ricevuti
+	l(login)  	- effettuare nuovamente il login
+	e(exit)   	- terminare la connessione
+
+	ADMIN RESERVED SERVICES:
+	ar(report) 	- richiedere il report dei login degli utenti
+	abl(show bl) 	- mostrare la black list correntemente in vigore
+	anb(new bl) 	- aggiungere un indirizzo IP alla blacklist
+	acb(change bl) 	- modificare la blacklist
+	au(users)	- mostrare la lista degli utenti correntemente online
+	
+	I servizi possono essere richiesti tramite comandi shortcut o estesi
+	Le segnalazioni posso essere effettuate con l'invio di un messaggio all'utente "admin"
