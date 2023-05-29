@@ -81,7 +81,7 @@ int main(int argc, char* argv[]){
 	action2.sa_sigaction = &handle_intr;
 	sigaction(SIGINT,&action2,NULL);
 
-	// set the timer at 10 sec
+	// set the timer at 5 sec
 	timer.tv_sec = 10;
 	timer.tv_usec = 0;
 
@@ -90,12 +90,12 @@ int main(int argc, char* argv[]){
 	FD_ZERO(&fds);
 	FD_SET( my_socket, &fds);
 
-	int i;
+
 
     while(1){
 
-		check(i = read(my_socket, buffer, BUFSIZE), "Connessione interrotta! La sessione del server potrebbe essere scaduta...");
-		
+		check(read(my_socket, buffer, BUFSIZE), "Connessione interrotta! La sessione del server potrebbe essere scaduta...");
+
 		// check if the message from server has lenght >0
 		if(strlen(buffer)>0){
 
@@ -155,11 +155,10 @@ int main(int argc, char* argv[]){
     		memset(buffer,0,BUFSIZE);
 		}
 		else{
-			printf("Il server  non risponde, dopo un' inattivita di 60s la sessione viene cancellata...");
+			printf("Il server non risponde, dopo un' inattivita di 60s la sessione viene terminata...");
 			break;
 		}
     }
-    
     return 0;
 }
 
